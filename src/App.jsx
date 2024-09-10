@@ -1,6 +1,7 @@
 import Sidebar from "./components/Sidebar.jsx";
+import Carousel from "./components/Carousel.jsx";
+import banner from './assets/Untitled.png';
 import ProjectCard from "./components/ProjectCard.jsx";
-import banner from './assets/banner.jpg';
 
 function App() {
   return (
@@ -10,14 +11,21 @@ function App() {
         <img id="banner" src={banner} />
         <div id="main-content">
           <div>
-            <ProjectCard 
-              img="/placeholder.jpg"
-              name="Name"
-              description="This is where the description of the project goes."
-            />
-            <ProjectCard />
-            <ProjectCard />
+            <Carousel>
+              <ProjectCard/>
+              <ProjectCard/>
+              <ProjectCard/>
+              <ProjectCard/>
+              <ProjectCard/>
+              <ProjectCard/>
+            </Carousel>
           </div>
+        </div>
+
+        <div id="spacer"/>
+
+        <div className="footer">
+          <p>asikjdsajlkdjhnsaljkjdnhsjkahdakjs</p>
         </div>
       </div>
     </div>

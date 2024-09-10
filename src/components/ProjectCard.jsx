@@ -1,9 +1,9 @@
 function ProjectCard(props) {
     return (
         <div className="project-card">
-            <img src={props.img}/>
-            <div className="project-text">
-                <h3>{props.name}</h3>
+        <img src={props.img}/>
+            <div className="card-text">
+                <h4>{props.name}</h4>
                 <p>{props.description}</p>
             </div>
         </div>

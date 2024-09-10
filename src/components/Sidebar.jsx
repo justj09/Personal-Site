@@ -1,6 +1,5 @@
 import avatar from "../assets/avatar.jpg";
-import { FaLinkedin } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
 function Sidebar() {
