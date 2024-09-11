@@ -1,7 +1,7 @@
 import Sidebar from "./components/Sidebar.jsx";
 import Carousel from "./components/Carousel.jsx";
 import ProjectCard from "./components/ProjectCard.jsx";
-import banner from './assets/banner.jpg';
+import banner from './assets/banner.jpeg';
 
 function App() {
   return (
