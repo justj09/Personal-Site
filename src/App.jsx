@@ -8,25 +8,30 @@ function App() {
     <div className="flex-horizontal">
       <Sidebar />
       <div className="flex-vertical flex-fill">
-        <img id="banner" src={banner} />
+        <img className="banner" src={banner} />
         <div id="main-content">
           <div>
-            <h1>Title</h1>
+            <h2>Title</h2>
             <p>This is the content </p>
           </div>
           <div className="divider"/>
-          <Carousel>
-            <ProjectCard/>
-            <ProjectCard/>
-            <ProjectCard/>
-            <ProjectCard/>
-            <ProjectCard/>
-            <ProjectCard/>
-          </Carousel>
-          <div className="divider"/>
+          <div id="project-section">
+            <div>
+              <h2>My Projects</h2>
+            </div>
+            <Carousel>
+              <ProjectCard description="asdass"/>
+              <ProjectCard description="asdcvas"/>
+              <ProjectCard description="asdsadasdsasada dasdsasada dasdasdaasdaa dasdsasada dasdasdaasdaa dasdasdaasdaasda"/>
+              <ProjectCard />
+              <ProjectCard />
+              <ProjectCard />
+            </Carousel>
+            <div className="divider"/>
+          </div>
         </div>
 
-        <div id="spacer"/>
+        <div className="spacer"/>
 
         <div className="footer">
           <p>asikjdsajlkdjhnsaljkjdnhsjkahdakjs</p>
