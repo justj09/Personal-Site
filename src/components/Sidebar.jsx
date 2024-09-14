@@ -1,4 +1,3 @@
-import { useEffect, useState, useRef } from "react";
 import NavButtonHolder from "./NavButtonHolder";
 import avatar from "../assets/avatar.jpg";
 import { FaLinkedin, FaGithub } from "react-icons/fa";
@@ -17,8 +16,8 @@ function Sidebar() {
             </div>
             <nav id="nav-group">
                 <NavButtonHolder>
-                    <a className="active" href="#project-section">About</a>
-                    <a href="#aaa">About</a>
+                    <a className="active" href="#about-section">About</a>
+                    <a href="#project-section">About</a>
                     <a href="#bbb">About</a>
                     <a href="#ccc">About</a>
                 </NavButtonHolder>

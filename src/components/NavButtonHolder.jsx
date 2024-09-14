@@ -1,24 +1,36 @@
 import { useEffect, useState, useRef, Children } from "react";
 
-
 function NavButtonHolder({ children }) {
-    const anchorElements = useRef();
-    const [activeChildren, setActiveChildren] = useState([]);
+    const anchorElements = useRef([]);
+    const [activeIndex, setActiveIndex] = useState(0);
+    const errorMargin = 100;
+
+    const handleScroll = () => {
+        let currentActiveIndex = 0;
+        anchorElements.current.forEach((element, i) => {
+            if (window.scrollY > element.offsetTop - errorMargin) {
+                currentActiveIndex = i;
+            }
+        });
+        setActiveIndex(currentActiveIndex);
+    };
 
     useEffect(() => {
-        function handleScroll() { 
-            setActiveChildren(Array.from(anchorElements.current.map((element) => window.scrollY > element.offsetTop)));
-        }
-
-        anchorElements.current = Array.from(children.map((child) => document.querySelector(child.props.href)));
+        anchorElements.current = Children.map(children, (child) =>
+            document.querySelector(child.props.href)
+        );
         handleScroll();
         window.addEventListener("scroll", handleScroll);
-        return () => { window.removeEventListener('scroll', handleScroll) };
-    }, []);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [children]);
 
     return (
         <div className="nav-button-holder">
-            {Children.map(children, (child, i) => <div className={activeChildren[i] ? "active" : ""}>{child}</div>)}
+            {Children.map(children, (child, i) => (
+                <div className={i === activeIndex ? "active" : ""}>
+                    {child}
+                </div>
+            ))}
         </div>
     );
 }

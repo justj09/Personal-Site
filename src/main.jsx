@@ -3,7 +3,6 @@ import { createRoot } from 'react-dom/client';
 import App from './App.jsx';
 import './index.css';
 
-console.log("set");
 let resizeTimer;
 window.addEventListener("resize", () => {
   document.body.classList.add("disabled-animation");

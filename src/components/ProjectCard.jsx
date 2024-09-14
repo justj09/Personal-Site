@@ -2,7 +2,7 @@ function ProjectCard({ img="/placeholder.jpg", name="Placeholder Name", descript
     return (
         <div className="project-card">
             <img src={img}/>
-            <div className="card-text">
+            <div>
                 <h4>{name}</h4>
                 <p>{description}</p>
             </div>

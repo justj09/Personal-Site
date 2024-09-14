@@ -10,12 +10,12 @@ function App() {
         <div className="flex-vertical flex-fill">
             <img className="banner" src={banner} />
             <div id="main-content">
-                <div>
+                <div id="about-section" className="section">
                     <h2 className="underscore-header">Title</h2>
                     <p>This is the content </p>
                 </div>
                 <div className="divider"/>
-                <div id="project-section">
+                <div id="project-section" className="section">
                     <div>
                     <h2 className="underscore-header">My Projects</h2>
                     </div>
@@ -29,18 +29,11 @@ function App() {
                     </Carousel>
                     <div className="divider"/>
                 </div>
+                <div id="bbb" className="section">b</div>
                 <div className="spacer"/>
                 <div className="spacer"/>
                 <div className="spacer"/>
-                <div id="aaa">a</div>
-                <div className="spacer"/>
-                <div className="spacer"/>
-                <div className="spacer"/>
-                <div id="bbb">b</div>
-                <div className="spacer"/>
-                <div className="spacer"/>
-                <div className="spacer"/>
-                <div id="ccc">c</div>
+                <div id="ccc" className="section">c</div>
             </div>
 
             <div className="spacer"/>
