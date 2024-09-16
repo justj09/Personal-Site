@@ -5,14 +5,15 @@ function Carousel({ children }) {
     const [index, setIndex] = useState(0);
     const [size, setSize] = useState(0);
 
+    const handleResize = () => {
+        const displayedItems = parseInt(getComputedStyle(document.body).getPropertyValue("--displayed-carousel-items"));
+        setSize(Children.count(children) - displayedItems);
+    };
+
     useEffect(() => {
-        const updateSize = () => {
-            const displayedItems = parseInt(getComputedStyle(document.body).getPropertyValue("--displayed-carousel-items"));
-            setSize(Children.count(children) - displayedItems);
-        };
-        updateSize();
-        window.addEventListener("resize", updateSize);
-        return () => window.removeEventListener("resize", updateSize);
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
     }, [children]);
 
     const shiftLeft = () => setIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : size));
@@ -25,13 +26,13 @@ function Carousel({ children }) {
                 <button className="carousel-button-left" onClick={shiftLeft}>
                     <IoIosArrowDropleftCircle />
                 </button>
-                <div id="carousel-track">
+                <ul id="carousel-track">
                     {Children.map(children, (child, i) => (
-                        <div key={i} className="carousel-item" style={{ transform: `translateX(${index * -100}%)` }}>
+                        <li key={i} className="carousel-item" style={{ transform: `translateX(${index * -100}%)` }}>
                             {child}
-                        </div>
+                        </li>
                     ))}
-                </div>
+                </ul>
                 <button className="carousel-button-right" onClick={shiftRight}>
                     <IoIosArrowDroprightCircle />
                 </button>

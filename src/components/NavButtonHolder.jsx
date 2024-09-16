@@ -3,12 +3,11 @@ import { useEffect, useState, useRef, Children } from "react";
 function NavButtonHolder({ children }) {
     const anchorElements = useRef([]);
     const [activeIndex, setActiveIndex] = useState(0);
-    const errorMargin = 100;
 
     const handleScroll = () => {
         let currentActiveIndex = 0;
         anchorElements.current.forEach((element, i) => {
-            if (window.scrollY > element.offsetTop - errorMargin) {
+            if (window.scrollY + window.innerHeight / 2 > element.offsetTop) {
                 currentActiveIndex = i;
             }
         });
@@ -25,13 +24,13 @@ function NavButtonHolder({ children }) {
     }, [children]);
 
     return (
-        <div className="nav-button-holder">
+        <ul className="nav-button-holder">
             {Children.map(children, (child, i) => (
-                <div className={i === activeIndex ? "active" : ""}>
+                <li className={i === activeIndex ? "active" : ""}>
                     {child}
-                </div>
+                </li>
             ))}
-        </div>
+        </ul>
     );
 }
 

@@ -9,24 +9,21 @@ function Sidebar() {
             <div id="info-group">
                 <img src={avatar} />
                 <h1>Justin Ni</h1>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-                Fusce sed viverra eros. Praesent auctor 
-                elit quis elit molestie ultrices sit amet 
-                convallis nulla.</p>
+                <p>Aspiring Software Developer Writing Functioning Code</p>
             </div>
             <nav id="nav-group">
                 <NavButtonHolder>
-                    <a className="active" href="#about-section">About</a>
-                    <a href="#project-section">About</a>
-                    <a href="#bbb">About</a>
-                    <a href="#ccc">About</a>
+                    <a className="active" href="#about-me">About Me</a>
+                    <a href="#my-skills">My Skills</a>
+                    <a href="#my-work">My Work</a>
+                    <a href="#contact-me">Contact Me</a>
                 </NavButtonHolder>
             </nav>
-            <div id="link-group">
-                <a href="" className="icon"><FaLinkedin /></a>
-                <a href="" className="icon"><FaGithub /></a>
-                <a href="" className="icon"><MdEmail /></a>
-            </div>
+            <ul id="link-group">
+                <li><a href="https://www.linkedin.com/in/just-ni/" target="_blank" className="icon"><FaLinkedin /></a></li>
+                <li><a href="https://github.com/justj09" target="_blank" className="icon"><FaGithub /></a></li>
+                <li><a href="#contact-me" className="icon"><MdEmail /></a></li>
+            </ul>
         </div>
     )
 }
