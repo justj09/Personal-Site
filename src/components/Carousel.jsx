@@ -8,13 +8,14 @@ function Carousel({ children }) {
     const handleResize = () => {
         const displayedItems = parseInt(getComputedStyle(document.body).getPropertyValue("--displayed-carousel-items"));
         setSize(Children.count(children) - displayedItems);
+        setIndex((previousState) => { return Math.min(previousState, size); });
     };
 
     useEffect(() => {
         handleResize();
         window.addEventListener("resize", handleResize);
         return () => window.removeEventListener("resize", handleResize);
-    }, [children]);
+    }, []);
 
     const shiftLeft = () => setIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : size));
 
