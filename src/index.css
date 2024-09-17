@@ -61,6 +61,18 @@ a {
     text-decoration: none;
 }
 
+button {
+    & {
+        background-color: #e9e9ed;
+    }
+    &:hover {
+        background-color: #d0d0d7;
+    }
+    &:active {
+        background-color: #b1b1b9;
+    }
+}
+
 body {
     background: var(--biege);
     font-family: "Inter", sans-serif;
