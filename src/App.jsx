@@ -10,6 +10,12 @@ import javaIcon from './assets/java.svg';
 import reactIcon from './assets/react.svg';
 import firebaseIcon from './assets/firebase.svg';
 
+import projectIMG1 from './assets/project-1.png';
+import projectIMG2 from './assets/project-2.png';
+import projectIMG3 from './assets/project-3.png';
+import projectIMG4 from './assets/project-4.png';
+import projectIMG5 from './assets/project-5.png';
+
 import { FaLinkedin, FaGithub, FaPhone} from "react-icons/fa";
 import { MdEmail } from "react-icons/md";
 
@@ -44,27 +50,31 @@ function App() {
                         <ProjectCard 
                             name="Personal Site" 
                             link="https://github.com/justj09/Personal-Site" 
+                            img={projectIMG1}
                             description="The personal portfolio you are currently viewing. A Fully responsive website developed from scratch in React, with publically available source code on GitHub."
                         />
                         <ProjectCard 
                             name="TAAM CMS Android Application" 
                             link="https://github.com/jonathan-imanu/TAAM-Collection-Management-System" 
+                            img={projectIMG2}
                             description="An Android app written in Java, designed to manage the collection of the Toronto Asian Art Museum. The storage of the collection data, as well as user authentication, is handled using Firebase services."/>
                         <ProjectCard 
                             name="ChessGPT" 
                             link="https://github.com/justj09/ChessGPT" 
+                            img={projectIMG3}
                             description="The work-in-progress backend of a chess application that makes API requests to GPT 3.5 Turbo for invalid chess moves with confident explanations, which is then interperated by the Python Chess library."
                         />
                         <ProjectCard 
                             name="Employee Management System" 
                             link="https://github.com/justj09/EmployeeManagementSystem" 
+                            img={projectIMG4}
                             description="A concept employee management system made in Java as an exercise. Allows for the addition, changing, removal, and filtering of full-time or part-time employees along with their corresponding attributes."
                         />
                         <ProjectCard 
                             name="Naive Pokemon Battle Simulator" 
                             link="https://replit.com/@justj09/Naive-Pokemon-Battle-Simulator" 
-                            description="A recreation of Pokemon battle mechanics made while learning software development basics. Dedication was put into delivering a product that aligned with client expectations in-spite of limitations.
-"
+                            img={projectIMG5}
+                            description="A recreation of Pokemon battle mechanics made while learning software development basics. Dedication was put into delivering a product that aligned with client expectations in-spite of limitations."
                         />
                     </Carousel>
                 </div>
@@ -80,9 +90,12 @@ function App() {
                                 <div><MdEmail /> justin_ni@outlook.com </div>
                                 <div><FaPhone /> (647)-668-3709 </div>
                             </div>
-                            <div className="link-container"><a href="" target="_blank" className="icon"><FaLinkedin /></a>  <a href="" target="_blank" className="icon"><FaGithub /></a></div>
+                            <div className="link-container">
+                                <a href="https://www.linkedin.com/in/just-ni" target="_blank" className="icon"><FaLinkedin /></a>  
+                                <a href="https://github.com/justj09" target="_blank" className="icon"><FaGithub /></a>
+                            </div>
                         </div>
-                        <EmailForm />
+                        <EmailForm /> 
                     </div>
                 </div>
             </div>

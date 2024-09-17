@@ -8,7 +8,11 @@ function EmailForm() {
     const sendEmail = (e) => {
         e.preventDefault();
         console.log(form.current);
-        emailjs.sendForm('contact_service', 'contact_form', form.current, { publicKey: publicKey, });
+        emailjs.sendForm('contact_service', 'contact_form', form.current, { publicKey: publicKey, })
+        .then( 
+            () => { alert('Message Sent!'); },
+            (error) => { alert('Failed to Send.', error.text); },
+        );
     };
 
     return (
@@ -20,7 +24,7 @@ function EmailForm() {
             </div>
             <input type="text"  name="subject" placeholder="Subject" autoComplete="off" required></input>
             <textarea name="message" placeholder="Message" autoComplete="off" required></textarea>
-            <input type="submit" value="Send Message"></input>
+            <button type="submit">Send Message</button>
         </form>
     )
 }

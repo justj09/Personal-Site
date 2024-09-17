@@ -20,7 +20,7 @@ function Sidebar() {
                 </NavButtonHolder>
             </nav>
             <ul id="link-group">
-                <li><a href="https://www.linkedin.com/in/just-ni/" target="_blank" className="icon"><FaLinkedin /></a></li>
+                <li><a href="https://www.linkedin.com/in/just-ni" target="_blank" className="icon"><FaLinkedin /></a></li>
                 <li><a href="https://github.com/justj09" target="_blank" className="icon"><FaGithub /></a></li>
                 <li><a href="#contact-me" className="icon"><MdEmail /></a></li>
             </ul>
